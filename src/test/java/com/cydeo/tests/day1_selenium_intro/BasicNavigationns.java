@@ -12,6 +12,8 @@ public class BasicNavigationns {
 
         driver.get("https://www.tesla.com");
 
+        String currentTitle = driver.getTitle();
+
         Thread.sleep(3000);
 
         driver.navigate().back();
@@ -19,6 +21,25 @@ public class BasicNavigationns {
         Thread.sleep(3000);
 
         driver.navigate().forward();
+
+        Thread.sleep(3000);
+
+        driver.navigate().refresh();
+
+        Thread.sleep(3000);
+
+        driver.navigate().to("https://www.google.com");
+
+        currentTitle = driver.getTitle();
+
+        System.out.println("currentTitle = " + currentTitle);
+
+        String currentURL = driver.getCurrentUrl();
+
+        System.out.println("currentURL = " + currentURL);
+
+
+
     }
 
 }
