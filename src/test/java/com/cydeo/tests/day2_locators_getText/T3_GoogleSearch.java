@@ -18,6 +18,14 @@ public class T3_GoogleSearch {
         WebElement googleSearchBox = driver.findElement(By.name("q"));
         googleSearchBox.sendKeys("apple" + Keys.ENTER);
 
+        String expectedInTitle = "apple";
+        String actualTitle = driver.getTitle();
+
+        if(actualTitle.startsWith(expectedInTitle)){
+            System.out.println("Title verification passed");
+        }else{
+            System.out.println("Title verification failed");
+        }
 
     }
 }
